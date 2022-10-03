@@ -1,12 +1,8 @@
 const title = document.querySelector(".title h1");
-
 const rule = document.querySelector(".rule");
-
 const pick = document.querySelector(".pick");
-
 const gameSections = document.querySelectorAll(".game");
 const pointBoxes = document.querySelectorAll(".score");
-
 const outcome = document.querySelector(".outcome");
 
 function sectionsOpacity(sections) {
@@ -14,24 +10,28 @@ function sectionsOpacity(sections) {
     section.style.opacity = "0";
   });
 }
+
+function itemOpacity(item) {
+  item.style.opacity = "0";
+}
+
 function sectionsAnimation(sections) {
   sections.forEach(section => {
     section.style.opacity = "1";
     section.classList.add("pop-in");
   });
 }
+
 sectionsOpacity(gameSections);
 sectionsOpacity(pointBoxes);
-
-function itemOpacity(item) {
-  item.style.opacity = "0";
-}
+itemOpacity(title);
 itemOpacity(rule);
 itemOpacity(pick);
 itemOpacity(outcome);
 
 window.addEventListener("load", () => {
   title.classList.add("title-ani");
+  title.style.opacity = "1";
   setTimeout(() => {
     outcome.classList.add("outcome-ani");
     outcome.style.opacity = "1";
